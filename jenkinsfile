@@ -1,4 +1,8 @@
 
+
+# Jenkinsfile for CI/CD Pipeline
+# This file defines the stages for building, testing, and deploying the calculator application.
+
 pipeline {
     agent any
 
@@ -31,7 +35,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
-                // deployment steps need to go here
+                // Deployment steps need to go here
             }
         }
     }

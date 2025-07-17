@@ -21,21 +21,23 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Docker image...'
+                // Build with Dockerfile that installs pytest
                 bat "docker build -t %IMAGE_NAME% ."
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Running tests inside Docker container...'
-                bat "docker run --rm %IMAGE_NAME%"
+                echo 'Running pytest tests inside Docker container...'
+                // Run tests with pytest; if tests fail, it will cause this stage to fail
+                bat "docker run --rm %IMAGE_NAME% pytest test_calculator.py"
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
-                // Deployment steps need to go here
+                // Add deployment steps here
             }
         }
     }

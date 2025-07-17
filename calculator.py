@@ -1,4 +1,5 @@
 
+# File: calculator.py
 # Purpose: Simple calculator logic
 # Dependencies: None
 # Description: This module provides basic arithmetic operations.

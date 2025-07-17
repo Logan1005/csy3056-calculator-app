@@ -1,4 +1,5 @@
 
+# File: main.py
 # Purpose: Interface for user interaction with the calculator
 # Dependencies: Calculator module
 # Description: This script uses the calculator module to perform arithmetic operations based on user input

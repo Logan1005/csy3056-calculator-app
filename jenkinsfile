@@ -1,7 +1,7 @@
 
 
-# Jenkinsfile for CI/CD Pipeline
-# This file defines the stages for building, testing, and deploying the calculator application.
+// Jenkinsfile for CI/CD Pipeline
+// This file defines the stages for building, testing, and deploying the calculator application.
 
 pipeline {
     agent any

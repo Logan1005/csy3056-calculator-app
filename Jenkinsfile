@@ -1,7 +1,8 @@
 
-
-// Jenkinsfile for CI/CD Pipeline
-// This file defines the stages for building, testing, and deploying the calculator application.
+// Author: Logan
+// Purpose: Jenkinsfile for CI/CD Pipeline
+// Dependencies: Docker, Jenkins
+// Description: This file defines the stages for building, testing, and deploying the calculator application.
 
 pipeline {
     agent any
@@ -36,8 +37,9 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Deploying application...'
-                // Add deployment steps here
+                echo 'Running the calculator web app...'
+                bat "docker run -d -p 5000:5000 --name calculator-app calculator-app python app.py"
+                echo 'Application deployed at http://localhost:5000'
             }
         }
     }

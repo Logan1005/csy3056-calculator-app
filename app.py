@@ -9,6 +9,10 @@ from calculator import add, subtract, multiply, divide
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return render_template("calculator.html")
+
 @app.route('/calculate', methods=['POST'])
 def calculate():
     result = None

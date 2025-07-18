@@ -37,10 +37,16 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Running the calculator web app...'
-                bat "docker run -d -p 5000:5000 --name calculator-app calculator-app python app.py"
-                echo 'Application deployed at http://localhost:5000'
-            }
+                echo 'Deploying application...'
+                bat """
+                REM Stop & remove any existing container
+                docker stop calculator-app || exit 0
+                docker rm calculator-app || exit 0
+
+                REM Run the new container
+                docker run -d -p 5000:5000 --name calculator-app %IMAGE_NAME% python app.py
+                """
+            }  
         }
     }
 }

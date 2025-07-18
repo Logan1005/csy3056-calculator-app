@@ -4,7 +4,7 @@
 # Purpose: Web-based frontend for the calculator using Flask
 # Dependencies: Flask, calculator module
 
-from flask import Flask, request, jsonify
+from flask import Flask, render_template, request, jsonify
 from calculator import add, subtract, multiply, divide
 
 app = Flask(__name__)
